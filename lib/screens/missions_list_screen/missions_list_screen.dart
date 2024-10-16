@@ -16,12 +16,6 @@ class MissionsListScreenState extends State<MissionsListScreen> {
     context.read<MissionsBloc>().showMissions();
   }
 
-  // @override
-  // void didUpdateWidget(covariant MissionsListScreen oldWidget) {
-  //   super.didUpdateWidget(oldWidget);
-  //   context.read<MissionsBloc>().showMissions();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MissionsBloc, MissionsState>(
