@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../missions_list_screen/missions_list_bloc.dart';
 
+class AddMissionScreenConstants {
+  static const String addMission = "Add a mission";
+  static const String missionName = "Mission name";
+  static const String saveMission = "Save mission";
+}
+
 class AddMissionScreen extends StatelessWidget {
   const AddMissionScreen({super.key});
 
@@ -11,7 +17,7 @@ class AddMissionScreen extends StatelessWidget {
     TextEditingController controller = TextEditingController();
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Add a mission"),
+        title: const Text(AddMissionScreenConstants.addMission),
         centerTitle: true,
       ),
       body: Padding(
@@ -20,7 +26,8 @@ class AddMissionScreen extends StatelessWidget {
           children: [
             TextField(
               controller: controller,
-              decoration: const InputDecoration(labelText: 'Mission name'),
+              decoration: const InputDecoration(
+                  labelText: AddMissionScreenConstants.missionName),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
@@ -32,7 +39,7 @@ class AddMissionScreen extends StatelessWidget {
                   Navigator.pop(context);
                 }
               },
-              child: const Text('Save mission'),
+              child: const Text(AddMissionScreenConstants.saveMission),
             )
           ],
         ),
